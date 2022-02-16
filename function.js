@@ -2,22 +2,73 @@
 
 let playerSelection = prompt('Please pick your weapon: rock, paper, scissors').toLowerCase();
 let option = ['rock','paper','scissors'];
-let message;
 let computerSelection = computerPlay();
-
-//This function will check the user's input
-//If it isn't rock, paper or scissors --> needs to enter a valid word
-
-    if (option.includes(playerSelection)) {
-        computerPlay();//in here I can assure that won't go on if there isn't a valid word
-        console.log(playerSelection);
-        console.log(computerPlay());
-    } else {
-        message='Word not valid';
-        console.log(message);
-    }
 
 //function that picks a random option for the computer
 function computerPlay() {
     return option[Math.floor(Math.random()*option.length)]
 }
+
+//main function for one round 
+
+function playRound(playerOption, computerOption) {
+
+    if (option.includes(playerOption))  {
+        //if playerOption is rock
+        if(playerOption==='rock') {
+        if(computerSelection==='scissors') {
+            //rock beats scissors
+            alert(`${playerOption} beats ${computerOption}`);
+        } else {
+            if(computerSelection==='paper') {
+                //paper beats rock
+                alert(`${computerOption} beats ${playerOption}`);
+            } else {
+                //it's a tie
+                alert('it is a tie');
+            }
+        }
+        }
+
+        //if playerOption is paper
+        if(playerOption==='paper') {
+        if(computerSelection==='rock') {
+            //paper beats rock
+            alert(`${playerOption} beats ${computerOption}`);
+        } else {
+            if(computerSelection==='scissors') {
+                //scissors beats paper
+                alert(`${computerOption} beats ${playerOption}`);
+            } else {
+                //it's a tie
+                alert('it is a tie');
+            }
+        }
+        }
+
+        //if playerOption is scissors
+        if(playerOption==='scissors') {
+        if(computerSelection==='paper') {
+            //scissors beats paper
+            alert(`${playerOption} beats ${computerOption}`);
+        } else {
+            if(computerSelection==='rock') {
+                //rock beats scissors
+                alert(`${computerOption} beats ${playerOption}`);
+            } else {
+                //it's a tie
+                alert('it is a tie');
+            }
+        }
+        }
+    } else {
+        alert(`${playerOption} is not a valid option`)
+    }
+
+return `${playerOption} and ${computerOption}`
+}
+
+const winner = playRound(playerSelection,computerSelection);
+
+console.log(`The user picked ${playerSelection} and the computer picked ${computerSelection}`);
+
