@@ -1,74 +1,38 @@
-//alert('Let\'s play a game');
+//Declare variable and ask for an input to the user
+let userSelection = prompt('Let\'s play a game. Pick your weapon: rock, paper or scissors').toLowerCase();
 
-let playerSelection = prompt('Please pick your weapon: rock, paper, scissors').toLowerCase();
-let option = ['rock','paper','scissors'];
+//options available to pick from
+let choices = ['rock','paper','scissors'];
+
+//computer's selection is chosen by a function
 let computerSelection = computerPlay();
 
-//function that picks a random option for the computer
+//It's not defined, this will storage the return value from my functions.
+let result;
+
+//function for computer's selection
 function computerPlay() {
-    return option[Math.floor(Math.random()*option.length)]
+    return choices[Math.floor(Math.random()*choices.length)]
 }
 
-//main function for one round 
+//this will check the user's input and will call the playRound function if the input is between the option [rock,paper,scissors]
+if (choices.includes(userSelection)) {
+    result = playRound(userSelection, computerSelection);
+    console.log(userSelection, computerSelection, result);
+} else {
+    console.log('Wrong input');
+}
 
-function playRound(playerOption, computerOption) {
-
-    if (option.includes(playerOption))  {
-        //if playerOption is rock
-        if(playerOption==='rock') {
-        if(computerSelection==='scissors') {
-            //rock beats scissors
-            alert(`${playerOption} beats ${computerOption}`);
-        } else {
-            if(computerSelection==='paper') {
-                //paper beats rock
-                alert(`${computerOption} beats ${playerOption}`);
-            } else {
-                //it's a tie
-                alert('it is a tie');
-            }
+//main function
+function playRound(userChoice, computerChoice) {
+    if(userChoice===computerChoice) {
+        result = 'It\'s a tie';
+    } else { //if they are different
+        if (((userChoice==='rock') && (computerChoice==='scissors')) || ((userChoice==='paper') && (computerChoice==='rock')) || ((userChoice==='scissors') && (computerChoice==='paper'))) {
+            result = `The user wins! ${userChoice} beats ${computerChoice}`
+        } else if (((userChoice==='rock') && (computerChoice==='paper')) || ((userChoice==='paper') && (computerChoice==='scissors')) || ((userChoice==='scissors') && (computerChoice==='rock'))) {
+            result = `The computer wins! ${computerChoice} beats ${userChoice}`
         }
-        }
-
-        //if playerOption is paper
-        if(playerOption==='paper') {
-        if(computerSelection==='rock') {
-            //paper beats rock
-            alert(`${playerOption} beats ${computerOption}`);
-        } else {
-            if(computerSelection==='scissors') {
-                //scissors beats paper
-                alert(`${computerOption} beats ${playerOption}`);
-            } else {
-                //it's a tie
-                alert('it is a tie');
-            }
-        }
-        }
-
-        //if playerOption is scissors
-        if(playerOption==='scissors') {
-        if(computerSelection==='paper') {
-            //scissors beats paper
-            alert(`${playerOption} beats ${computerOption}`);
-        } else {
-            if(computerSelection==='rock') {
-                //rock beats scissors
-                alert(`${computerOption} beats ${playerOption}`);
-            } else {
-                //it's a tie
-                alert('it is a tie');
-            }
-        }
-        }
-    } else {
-        alert(`${playerOption} is not a valid option`)
     }
-
-return `${playerOption} and ${computerOption}`
+    return result;
 }
-
-const winner = playRound(playerSelection,computerSelection);
-
-console.log(`The user picked ${playerSelection} and the computer picked ${computerSelection}`);
-
