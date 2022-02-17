@@ -23,7 +23,7 @@ if (choices.includes(userSelection)) {
     console.log('Wrong input');
 }
 
-//main function
+//main function for one round
 function playRound(userChoice, computerChoice) {
     if(userChoice===computerChoice) {
         result = 'It\'s a tie';
@@ -36,3 +36,8 @@ function playRound(userChoice, computerChoice) {
     }
     return result;
 }
+
+//I need to create a new function game() that calls the playRound  for 5 rounds and at the end tells who is the winner
+
+//I need an accumulator and if- else 
+//if user has 3 points, he wins, if hasn't, the computer wins
