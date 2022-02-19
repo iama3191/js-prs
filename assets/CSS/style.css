@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Overlock+SC&display=swap');
+
+/*General style*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: 2px solid red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2 {
+    font-family: 'Overlock SC', cursive;
+    font-size: 2rem;
+}
+
+/*Game area*/
+.main-title {
+    text-align: center;
+    font-weight: 900;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.content-option {
+    background-color: lightblue;
+    width: 1000px;
+    max-width: 80%;
+    padding: 2em 5em 5em;
+    margin: 0 auto;
+}
+
 .fa-light {
     font-family: "Font Awesome 6 Free";
     font-size: 5rem;
