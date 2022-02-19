@@ -5,13 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
+    <!--link for fontawesome-->
+    <script src="https://kit.fontawesome.com/5cf6f031a9.js" crossorigin="anonymous"></script>
+    <!--link for stylesheet-->
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <title>Rock, Paper, Scissors!</title>
 </head>
 
 <body>
 
-    <script src="function.js"></script>
+    <h1 class="main-title">Rock, Paper, Scissors!</h1>
+
+    <!--this is the main layout after the page is loaded-->
+    <!--<div class="content-option">
+        <h2 class="subtitle"></h2>
+        <div class="levels-container">
+            <div class="level-option beginner">
+
+            </div>
+            <div class="level-option intermediate">
+
+            </div>
+            <div class="level-option advanced">
+
+            </div>
+        </div>
+    </div> -->
+
+    <!--This is the game layout after user selects an option-->
+    <div class="content-option">
+        <h2 class="subtitle">Make your choice</h2>
+        <div class="game-area">
+            <div class="game-options">
+                <button class="btn btn-icons red" data-option-type="rock"><i
+                        class="fa-light fa-hand-back-fist"></i></button>
+                <button class="btn btn-icons blue" data-option-type="paper"><i class="fa-light fa-hand"></i></button>
+                <button class="btn btn-icons green" data-option-type="scissors"><i
+                        class="fa-light fa-hand-scissors"></i></button>
+            </div>
+            <div class="battle">
+                <div class="selection user-box">🤛</div><span class="versus">VS</span>
+                <div class="selection computer-box">✌️</div>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        User:
+        <span class="score user-points">0</span>
+    </div>
+    <div class="result">
+        Computer:
+        <span class="score computer-points">0</span>
+    </div>
+
+    <!--link to the script-->
+    <script src="./assets/JS/script.js"></script>
 </body>
 
 </html>
