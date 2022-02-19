@@ -37,7 +37,26 @@ h2 {
     margin: 0 auto;
 }
 
+.game-area {
+    padding: 1em;
+    width: 600px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.game-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-icons {
+    padding: 1em;
+    cursor: pointer;
+    border-radius: 5%;
+}
+
 .fa-light {
     font-family: "Font Awesome 6 Free";
     font-size: 5rem;
 }
+
