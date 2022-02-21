@@ -33,9 +33,7 @@ function win(userOption, computerOption) {
 
     document.getElementById("battle-text").innerText =  "You win!";
 
-    document.getElementById("user-box").style.border = "4px solid green"
-
-    document.getElementById("computer-box").style.border = "4px solid red"
+    winerStyle();
 }
 
 /**
@@ -48,11 +46,8 @@ function lose(userOption, computerOption) {
 
     document.getElementById("battle-text").innerText =  "You lose!";
 
-    document.getElementById("computer-box").style.border = "4px solid green"
-
-    document.getElementById("user-box").style.border = "4px solid red"
+    loserStyle();
 }
-
 
 /**
  * This function will increase the computer's score by one and display the value in the computer box
@@ -67,13 +62,29 @@ function lose(userOption, computerOption) {
 }
 
 /**
+ * Will give style to the boxes, and make more dynamic de game
+ */
+function winerStyle() {
+    document.getElementById("user-box").style.border = "4px solid green";
+
+    document.getElementById("computer-box").style.border = "4px solid red";
+}
+
+/**
+ * Will give style to the boxes, and make more dynamic de game
+ */
+function loserStyle() {
+    document.getElementById("user-box").style.border = "4px solid red";
+
+    document.getElementById("computer-box").style.border = "4px solid green";
+}
+
+/**
  * This function will run the main game. It needs to return who wins
  */
 function runGame(userChoice) {
 
     let computerChoice = computerSelection();
-    console.log("your choice is " + userChoice);
-    console.log("computer's choice is " + computerChoice);
 
     if(userChoice === computerChoice) {
         draw(userChoice, computerChoice);
@@ -84,4 +95,38 @@ function runGame(userChoice) {
                 lose(userChoice, computerChoice);
             }
         }
+        userImage(userChoice);
+        computerimage(computerChoice);
+}
+
+/**
+ * Function will change the chosen emoji from the user
+ */
+function userImage(userChoice) {
+    
+    let userImages = document.getElementById("user-box");
+
+    if (userChoice === "rock") {
+        userImages.innerHTML = "🤛";
+    } else if (userChoice === "paper") {
+        userImages.innerHTML = "✋";
+    } else {
+        userImages.innerHTML = "✌️";
+    }
+}
+
+/**
+ * Function will change the chosen emoji from the computer
+ */
+function computerimage(computerChoice) {
+    
+    let computerImages = document.getElementById("computer-box");
+
+    if (computerChoice === "rock") {
+        computerImages.innerHTML = "🤛";
+    } else if (computerChoice === "paper") {
+        computerImages.innerHTML = "✋";
+    } else {
+        computerImages.innerHTML = "✌️";
+    }
 }
