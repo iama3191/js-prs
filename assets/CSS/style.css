@@ -117,7 +117,13 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 4em;
-  margin-top: 3em;
+  margin-top: 2em;
+}
+
+#battle-text {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 2rem;
 }
 
 .versus {

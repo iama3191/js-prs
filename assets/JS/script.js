@@ -2,7 +2,6 @@ const choices = ["rock", "paper", "scissors"];
 
 //Wait for the DOM to finish loading before running the game
 //Get the button elements and add event listeners to them
-
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
@@ -32,13 +31,23 @@ function win(userOption, computerOption) {
     let oldUserScore = parseInt(document.getElementById('user-points').innerText);
     document.getElementById('user-points').innerText = ++oldUserScore;
 }
+
 /**
  * This function will increase the computer's score by one and display the value in the computer box
  */
 function lose(userOption, computerOption) {
-    
+
     let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
     document.getElementById('computer-points').innerText = ++oldUserScore;
+}
+
+/**
+ * This function will increase the computer's score by one and display the value in the computer box
+ */
+ function draw(userOption, computerOption) {
+    
+    document.getElementById("battle-text").innerText =  "It's a draw";
+    
 }
 
 /**
