@@ -32,6 +32,10 @@ function win(userOption, computerOption) {
     document.getElementById('user-points').innerText = ++oldUserScore;
 
     document.getElementById("battle-text").innerText =  "You win!";
+
+    document.getElementById("user-box").style.border = "4px solid green"
+
+    document.getElementById("computer-box").style.border = "4px solid red"
 }
 
 /**
@@ -42,7 +46,11 @@ function lose(userOption, computerOption) {
     let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
     document.getElementById('computer-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerText =  "You loose!";
+    document.getElementById("battle-text").innerText =  "You lose!";
+
+    document.getElementById("computer-box").style.border = "4px solid green"
+
+    document.getElementById("user-box").style.border = "4px solid red"
 }
 
 
@@ -52,7 +60,10 @@ function lose(userOption, computerOption) {
  function draw(userOption, computerOption) {
     
     document.getElementById("battle-text").innerText =  "It's a draw";
-    
+
+    document.getElementById("computer-box").style.border = "none";
+
+    document.getElementById("user-box").style.border = "none";
 }
 
 /**
