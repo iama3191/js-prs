@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
  * This function will generate randomly the computer selection between the options: rock, paper, scissors
  */
 function computerSelection() {
+
     let computerRandomChoice = choices[Math.floor(Math.random()*choices.length)];
      return computerRandomChoice;
 }
@@ -26,13 +27,19 @@ function computerSelection() {
 /**
  * This function will increase the user's score by one and display the value in the user box
  */
-
 function win(userOption, computerOption) {
+
     let oldUserScore = parseInt(document.getElementById('user-points').innerText);
     document.getElementById('user-points').innerText = ++oldUserScore;
 }
-
-
+/**
+ * This function will increase the computer's score by one and display the value in the computer box
+ */
+function lose(userOption, computerOption) {
+    
+    let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
+    document.getElementById('computer-points').innerText = ++oldUserScore;
+}
 
 /**
  * This function will run the main game. It needs to return who wins
