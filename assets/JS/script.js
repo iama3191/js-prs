@@ -24,7 +24,18 @@ function computerSelection() {
 }
 
 /**
- * This function will run the main game
+ * This function will increase the user's score by one and display the value in the user box
+ */
+
+function win(userOption, computerOption) {
+    let oldUserScore = parseInt(document.getElementById('user-points').innerText);
+    document.getElementById('user-points').innerText = ++oldUserScore;
+}
+
+
+
+/**
+ * This function will run the main game. It needs to return who wins
  */
 function runGame(userChoice) {
 
@@ -33,32 +44,12 @@ function runGame(userChoice) {
     console.log("computer's choice is " + computerChoice);
 
     if(userChoice === computerChoice) {
-        console.log("It's a draw.");
+        draw(userChoice, computerChoice);
     } else { //if they are different
             if (((userChoice==='rock') && (computerChoice==='scissors')) || ((userChoice==='paper') && (computerChoice==='rock')) || ((userChoice==='scissors') && (computerChoice==='paper'))) {
-                console.log(`The user wins! ${userChoice} beats ${computerChoice}`);
+                win(userChoice, computerChoice);
             } else if (((userChoice==='rock') && (computerChoice==='paper')) || ((userChoice==='paper') && (computerChoice==='scissors')) || ((userChoice==='scissors') && (computerChoice==='rock'))) {
-                console.log(`The computer wins! ${computerChoice} beats ${userChoice}`);
+                lose(userChoice, computerChoice);
             }
-}
-}
-/**
- * This function will check both answers and will return the correct one
- */
-function checkAnswers() {
-
-}
-
-/**
- * This function will increment by 1 the user's score if it gets the correct answer
- */
-function incrementUserScore() {
-
-}
-
-/**
- * This function will increment by 1 the computer's selection if it gets the correct answer
- */
-function incrementComputerScore() {
-
+        }
 }
