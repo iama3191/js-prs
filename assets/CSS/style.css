@@ -116,18 +116,18 @@ h2 {
 
 /*Battle section. These boxes will be hidden until the user clicks an option*/
 
+#battle-text {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.5rem;
+}
+
 .battle {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 4em;
   margin-top: 2em;
-}
-
-#battle-text {
-  text-align: center;
-  margin-top: 2em;
-  font-size: 1.5rem;
 }
 
 .versus {
@@ -138,8 +138,11 @@ h2 {
 }
 
 .selection {
+  width: 120px;
+  height: 120px;
   background-color: #fff;
-  font-size: 4rem;
-  padding: 0.2em 0.3em;
-  border-radius: 6%;
+  font-size: 3rem;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0.5em;
 }
