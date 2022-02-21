@@ -16,17 +16,31 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 /**
- * This function will generate randomly the computer selection
+ * This function will generate randomly the computer selection between the options: rock, paper, scissors
  */
 function computerSelection() {
-    let computerChoice = choices[Math.floor(Math.random()*choices.length)];
-     return computerChoice;
+    let computerRandomChoice = choices[Math.floor(Math.random()*choices.length)];
+     return computerRandomChoice;
 }
+
 /**
  * This function will run the main game
  */
 function runGame(userChoice) {
-    console.log("your choice is " + userChoice)
+
+    let computerChoice = computerSelection();
+    console.log("your choice is " + userChoice);
+    console.log("computer's choice is " + computerChoice);
+
+    if(userChoice === computerChoice) {
+        console.log("It's a draw.");
+    } else { //if they are different
+            if (((userChoice==='rock') && (computerChoice==='scissors')) || ((userChoice==='paper') && (computerChoice==='rock')) || ((userChoice==='scissors') && (computerChoice==='paper'))) {
+                console.log(`The user wins! ${userChoice} beats ${computerChoice}`);
+            } else if (((userChoice==='rock') && (computerChoice==='paper')) || ((userChoice==='paper') && (computerChoice==='scissors')) || ((userChoice==='scissors') && (computerChoice==='rock'))) {
+                console.log(`The computer wins! ${computerChoice} beats ${userChoice}`);
+            }
+}
 }
 /**
  * This function will check both answers and will return the correct one
