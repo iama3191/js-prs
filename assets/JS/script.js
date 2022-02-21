@@ -30,6 +30,8 @@ function win(userOption, computerOption) {
 
     let oldUserScore = parseInt(document.getElementById('user-points').innerText);
     document.getElementById('user-points').innerText = ++oldUserScore;
+
+    document.getElementById("battle-text").innerText =  "You win!";
 }
 
 /**
@@ -39,7 +41,10 @@ function lose(userOption, computerOption) {
 
     let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
     document.getElementById('computer-points').innerText = ++oldUserScore;
+
+    document.getElementById("battle-text").innerText =  "You loose!";
 }
+
 
 /**
  * This function will increase the computer's score by one and display the value in the computer box
