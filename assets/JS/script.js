@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             let optionType = this.getAttribute("data-type");
             runGame(optionType);
-            //computerSelection();
         })        
     }
 })
@@ -34,7 +33,6 @@ function win(user, computer) {
     document.getElementById("battle-text").innerHTML =  `${user} beats ${computer}. YOU WIN!`;
 
     winerStyle();
-
 }
 
 /**
@@ -98,26 +96,20 @@ function runGame(userChoice) {
         }
         userImage(userChoice);
         computerimage(computerChoice);
-        
+        gameCount(userChoice, computerChoice);
 }
 
-function gameOver(user) {
-    let countUserGame = parseInt(document.getElementById("user-points").innerText);
+/**
+ * function will track the games round and show the user the count while playing 
+ */
+function gameCount(user,computer) {
+    let gameNumber = parseInt(document.getElementById("games").innerText);
 
-    let countComputerGame = parseInt(document.getElementById("computer-points"));
-
-    let total = countUserGame + countComputerGame;
-
-    while( total <= 10) {
-        console.log(total);
-        if (countUserGame > countComputerGame) {
-            document.getElementById("battle-text").innerText = "GAME OVER. YOU WIN!";
-        } else {
-            document.getElementById("battle-text").innerText = "GAME OVER. YOU LOSE!";
-        }
+    if (user && computer) {
+        document.getElementById("games").innerText = ++gameNumber
     }
-}
 
+}
 /**
  * Function will change the chosen emoji from the user
  */

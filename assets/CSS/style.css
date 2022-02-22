@@ -38,6 +38,7 @@ h2 {
   max-width: 90%;
   padding: 1em 0.5em 3em;
   margin: 0 auto;
+  position: relative;
 }
 
 .game-area {
@@ -117,6 +118,13 @@ h2 {
 #computer-points {
   font-size: 1.4rem;
   color: rgb(104, 101, 101);
+}
+
+.round {
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+  font-size: 0.8rem;
 }
 /*Battle section. These boxes will be hidden until the user clicks an option*/
 
