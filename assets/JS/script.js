@@ -105,10 +105,9 @@ function runGame(userChoice) {
 function gameCount(user,computer) {
     let gameNumber = parseInt(document.getElementById("games").innerText);
 
-    if (user && computer) {
-        document.getElementById("games").innerText = ++gameNumber
-    }
-
+        if (user && computer) {
+            document.getElementById("games").innerText = ++gameNumber
+        }    
 }
 /**
  * Function will change the chosen emoji from the user
