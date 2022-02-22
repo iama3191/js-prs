@@ -131,7 +131,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .versus {
@@ -150,4 +150,29 @@ h2 {
   font-weight: 900;
   text-align: center;
   padding-top: 0.3em;
+}
+
+/*Media query min-width: 600px*/
+
+@media (min-width: 600px) {
+  .game-options {
+    gap: 2em;
+  }
+
+  .btn-icons {
+    width: 140px;
+    height: 140px;
+    border-width: 5px;
+  }
+
+  .fa-light {
+    font-size: 4rem;
+  }
+
+  .selection {
+    width: 150px;
+    height: 150px;
+    padding-top: 0.5em;
+    font-size: 4rem;
+  }
 }
