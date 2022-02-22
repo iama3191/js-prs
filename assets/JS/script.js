@@ -26,25 +26,26 @@ function computerSelection() {
 /**
  * This function will increase the user's score by one and display the value in the user box
  */
-function win(userOption, computerOption) {
+function win(user, computer) {
 
     let oldUserScore = parseInt(document.getElementById('user-points').innerText);
     document.getElementById('user-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerText =  "You win!";
+    document.getElementById("battle-text").innerHTML =  `${user} beats ${computer}. YOU WIN!`;
 
     winerStyle();
+
 }
 
 /**
  * This function will increase the computer's score by one and display the value in the computer box
  */
-function lose(userOption, computerOption) {
+function lose(user, computer) {
 
     let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
     document.getElementById('computer-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerText =  "You lose!";
+    document.getElementById("battle-text").innerHTML =  `${computer} beats ${user}. YOU LOSE!`;
 
     loserStyle();
 }
@@ -52,9 +53,9 @@ function lose(userOption, computerOption) {
 /**
  * This function will increase the computer's score by one and display the value in the computer box
  */
- function draw(userOption, computerOption) {
+ function draw(user, computer) {
     
-    document.getElementById("battle-text").innerText =  "It's a draw";
+    document.getElementById("battle-text").innerHTML =  `${user} equals ${computer}. IT'S A DRAW!`;
 
     document.getElementById("computer-box").style.border = "none";
 
@@ -97,6 +98,24 @@ function runGame(userChoice) {
         }
         userImage(userChoice);
         computerimage(computerChoice);
+        
+}
+
+function gameOver(user) {
+    let countUserGame = parseInt(document.getElementById("user-points").innerText);
+
+    let countComputerGame = parseInt(document.getElementById("computer-points"));
+
+    let total = countUserGame + countComputerGame;
+
+    while( total <= 10) {
+        console.log(total);
+        if (countUserGame > countComputerGame) {
+            document.getElementById("battle-text").innerText = "GAME OVER. YOU WIN!";
+        } else {
+            document.getElementById("battle-text").innerText = "GAME OVER. YOU LOSE!";
+        }
+    }
 }
 
 /**
