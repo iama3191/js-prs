@@ -42,7 +42,7 @@ h2 {
 
 .game-area {
   padding: 2em 1em 1em;
-  width: 600px;
+  width: 1000px;
   max-width: 95%;
   margin: 0 auto;
 }
@@ -169,10 +169,26 @@ h2 {
     font-size: 4rem;
   }
 
+  .battle {
+    gap: 3em;
+  }
+
   .selection {
     width: 150px;
     height: 150px;
     padding-top: 0.5em;
     font-size: 4rem;
+  }
+}
+
+/*Media query min-width: 1200px*/
+
+@media (min-width: 1200px) {
+  .game-options {
+    gap: 5em;
+  }
+
+  .battle {
+    gap: 4em;
   }
 }
