@@ -6,6 +6,20 @@ The rules are simple:
 -Scissors cuts paper
 -Paper covers rock
 
+## Objective of the project
+
+This project is for practicing my skills in javascript, this was an exercise from Odin Projects.
+
+## Future improvements
+
+- a help button: when the user clicks, it will show the rules.
+
+- choose your level: It Will show three options, and each level, will have a new variable.
+
+  - beginner: rock, paper, scissors.
+  - intermediate: rock, paper, scissors, lizard.
+  - advanced: rock, paper, scissors, lizard, spock.
+
 ## ICONS FOR THE GAME
 
 From the fontawesome page. Using the new version 6.0
