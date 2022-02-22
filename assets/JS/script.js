@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             let optionType = this.getAttribute("data-type");
             runGame(optionType);
-        })        
+        })
     }
 })
 
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function computerSelection() {
 
-    let computerRandomChoice = choices[Math.floor(Math.random()*choices.length)];
-     return computerRandomChoice;
+    let computerRandomChoice = choices[Math.floor(Math.random() * choices.length)];
+    return computerRandomChoice;
 }
 
 /**
@@ -30,7 +30,7 @@ function win(user, computer) {
     let oldUserScore = parseInt(document.getElementById('user-points').innerText);
     document.getElementById('user-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerHTML =  `${user} beats ${computer}. YOU WIN!`;
+    document.getElementById("battle-text").innerHTML = `${user} beats ${computer}. YOU WIN!`;
 
     winerStyle();
 }
@@ -43,7 +43,7 @@ function lose(user, computer) {
     let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
     document.getElementById('computer-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerHTML =  `${computer} beats ${user}. YOU LOSE!`;
+    document.getElementById("battle-text").innerHTML = `${computer} beats ${user}. YOU LOSE!`;
 
     loserStyle();
 }
@@ -51,9 +51,9 @@ function lose(user, computer) {
 /**
  * This function will increase the computer's score by one and display the value in the computer box
  */
- function draw(user, computer) {
-    
-    document.getElementById("battle-text").innerHTML =  `${user} equals ${computer}. IT'S A DRAW!`;
+function draw(user, computer) {
+
+    document.getElementById("battle-text").innerHTML = `${user} equals ${computer}. IT'S A DRAW!`;
 
     document.getElementById("computer-box").style.border = "none";
 
@@ -85,35 +85,35 @@ function runGame(userChoice) {
 
     let computerChoice = computerSelection();
 
-    if(userChoice === computerChoice) {
+    if (userChoice === computerChoice) {
         draw(userChoice, computerChoice);
     } else { //if they are different
-            if (((userChoice==='rock') && (computerChoice==='scissors')) || ((userChoice==='paper') && (computerChoice==='rock')) || ((userChoice==='scissors') && (computerChoice==='paper'))) {
-                win(userChoice, computerChoice);
-            } else if (((userChoice==='rock') && (computerChoice==='paper')) || ((userChoice==='paper') && (computerChoice==='scissors')) || ((userChoice==='scissors') && (computerChoice==='rock'))) {
-                lose(userChoice, computerChoice);
-            }
+        if (((userChoice === 'rock') && (computerChoice === 'scissors')) || ((userChoice === 'paper') && (computerChoice === 'rock')) || ((userChoice === 'scissors') && (computerChoice === 'paper'))) {
+            win(userChoice, computerChoice);
+        } else if (((userChoice === 'rock') && (computerChoice === 'paper')) || ((userChoice === 'paper') && (computerChoice === 'scissors')) || ((userChoice === 'scissors') && (computerChoice === 'rock'))) {
+            lose(userChoice, computerChoice);
         }
-        userImage(userChoice);
-        computerimage(computerChoice);
-        gameCount(userChoice, computerChoice);
+    }
+    userImage(userChoice);
+    computerimage(computerChoice);
+    gameCount(userChoice, computerChoice);
 }
 
 /**
  * function will track the games round and show the user the count while playing 
  */
-function gameCount(user,computer) {
+function gameCount(user, computer) {
     let gameNumber = parseInt(document.getElementById("games").innerText);
 
-        if (user && computer) {
-            document.getElementById("games").innerText = ++gameNumber
-        }    
+    if (user && computer) {
+        document.getElementById("games").innerText = ++gameNumber
+    }
 }
 /**
  * Function will change the chosen emoji from the user
  */
 function userImage(userChoice) {
-    
+
     let userImages = document.getElementById("user-box");
 
     if (userChoice === "rock") {
@@ -129,7 +129,7 @@ function userImage(userChoice) {
  * Function will change the chosen emoji from the computer
  */
 function computerimage(computerChoice) {
-    
+
     let computerImages = document.getElementById("computer-box");
 
     if (computerChoice === "rock") {
