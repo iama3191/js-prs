@@ -115,7 +115,7 @@ function gameOver(round) {
             document.getElementById("final-message").innerText = `GAME OVER!! This was a draw. Final result: ${userScore} vs. ${computerScore}. Do you want another chance?`
         } else {
             if(userScore > computerScore) {
-                document.getElementById("final-message").innerText = `GAME OVER!! Congrats! You won! Final result: ${userScore} vs. ${computerScore}. Do you want another chance?`
+                document.getElementById("final-message").innerText = `GAME OVER!! Congrats! You won! Final result: ${userScore} vs. ${computerScore}. Do you want to play again?`
             } else {
                 document.getElementById("final-message").innerText = `GAME OVER!! Awww...You lost! Final result: ${userScore} vs. ${computerScore}. Do you want another round?`
             }
@@ -124,6 +124,9 @@ function gameOver(round) {
     userDecision();
 }
 
+/**
+ * This function will evaluate the user decision for restarting the game or ending the game
+ */
 function userDecision() {
     let decisions = document.getElementsByClassName("btn-over");
 
