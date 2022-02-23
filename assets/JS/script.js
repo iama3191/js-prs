@@ -91,9 +91,7 @@ function gameCount(user, computer) {
 
     if (user && computer) {
         document.getElementById("games").innerText = ++gameNumber
-
     }
-    console.log(gameNumber);
     gameOver(gameNumber);
 }
 
@@ -102,16 +100,29 @@ function gameCount(user, computer) {
  */
 function gameOver(round) {
 
-    let roundNumber = parseInt(document.getElementById("games").innerText);
+    let userScore = parseInt(document.getElementById("user-points").textContent);
+    let computerScore = parseInt(document.getElementById("computer-points").textContent);
+    console.log(userScore, computerScore);
 
-    if (roundNumber === 5) {
+    if (round === 5) {
         document.getElementsByClassName("content-option")[0].style.visibility = "hidden";
+        
+        document.getElementsByClassName("result-area")[0].style.visibility = "hidden";
 
         document.getElementsByClassName("game-over")[0].style.visibility = "visible";
 
-    
-    }
+        if(userScore === computerScore) {
+            document.getElementById("final-message").innerText = `GAME OVER!! This was a draw. Final result: ${userScore} vs. ${computerScore}. Do you want another chance?`
+        } else {
+            if(userScore > computerScore) {
+                document.getElementById("final-message").innerText = `GAME OVER!! Congrats! You won! Final result: ${userScore} vs. ${computerScore}. Do you want another chance?`
+            } else {
+                document.getElementById("final-message").innerText = `GAME OVER!! Awww...You lost! Final result: ${userScore} vs. ${computerScore}. Do you want another round?`
+            }
+        }
+    }  
 }
+
 /**
  * Function will change the chosen emoji from the user
  */
