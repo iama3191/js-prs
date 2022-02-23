@@ -102,11 +102,11 @@ function gameOver(round) {
 
     let userScore = parseInt(document.getElementById("user-points").textContent);
     let computerScore = parseInt(document.getElementById("computer-points").textContent);
-    console.log(userScore, computerScore);
 
     if (round === 5) {
+
         document.getElementsByClassName("content-option")[0].style.visibility = "hidden";
-        
+
         document.getElementsByClassName("result-area")[0].style.visibility = "hidden";
 
         document.getElementsByClassName("game-over")[0].style.visibility = "visible";
@@ -121,6 +121,23 @@ function gameOver(round) {
             }
         }
     }  
+    userDecision();
+}
+
+function userDecision() {
+    let decisions = document.getElementsByClassName("btn-over");
+
+    for (decision of decisions) {
+        decision.addEventListener("click", function(){
+            let decisionType = this.getAttribute("data-type");
+            if(decisionType === 'y') {
+                window.location.reload();
+            } else {
+                document.getElementById("final-message").innerText = "See you soon!";
+                document.getElementsByClassName("decision")[0].style.visibility = "hidden";
+            }
+        });
+    }
 }
 
 /**

@@ -102,6 +102,7 @@ h2 {
 .hidden {
   visibility: hidden;
 }
+
 /*buttons container: rock, paper, scissors*/
 .game-options {
   display: flex;
