@@ -86,12 +86,31 @@ function runGame(userChoice) {
  * function will track the games round and show the user the count while playing 
  */
 function gameCount(user, computer) {
+
     let gameNumber = parseInt(document.getElementById("games").innerText);
 
     if (user && computer) {
         document.getElementById("games").innerText = ++gameNumber
+
     }
-   
+    console.log(gameNumber);
+    gameOver(gameNumber);
+}
+
+/**
+ * This function will evaluate the number of rounds and will end the game and return the winner.
+ */
+function gameOver(round) {
+
+    let roundNumber = parseInt(document.getElementById("games").innerText);
+
+    if (roundNumber === 5) {
+        document.getElementsByClassName("content-option")[0].style.visibility = "hidden";
+
+        document.getElementsByClassName("game-over")[0].style.visibility = "visible";
+
+    
+    }
 }
 /**
  * Function will change the chosen emoji from the user
