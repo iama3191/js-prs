@@ -30,9 +30,10 @@ function win(user, computer) {
     let oldUserScore = parseInt(document.getElementById('user-points').innerText);
     document.getElementById('user-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerHTML = `${user} beats ${computer}. YOU WIN!`;
+    document.getElementById("user-box").style.border = "4px solid green";
+    document.getElementById("computer-box").style.border = "4px solid red";
 
-    winerStyle();
+    document.getElementById("battle-text").innerHTML = `${user} beats ${computer}. YOU WIN!`;
 }
 
 /**
@@ -43,9 +44,10 @@ function lose(user, computer) {
     let oldUserScore = parseInt(document.getElementById('computer-points').innerText);
     document.getElementById('computer-points').innerText = ++oldUserScore;
 
-    document.getElementById("battle-text").innerHTML = `${computer} beats ${user}. YOU LOSE!`;
+    document.getElementById("user-box").style.border = "4px solid red";
+    document.getElementById("computer-box").style.border = "4px solid green";
 
-    loserStyle();
+    document.getElementById("battle-text").innerHTML = `${computer} beats ${user}. YOU LOSE!`;
 }
 
 /**
@@ -56,26 +58,7 @@ function draw(user, computer) {
     document.getElementById("battle-text").innerHTML = `${user} equals ${computer}. IT'S A DRAW!`;
 
     document.getElementById("computer-box").style.border = "none";
-
     document.getElementById("user-box").style.border = "none";
-}
-
-/**
- * Will give style to the boxes, and make more dynamic de game
- */
-function winerStyle() {
-    document.getElementById("user-box").style.border = "4px solid green";
-
-    document.getElementById("computer-box").style.border = "4px solid red";
-}
-
-/**
- * Will give style to the boxes, and make more dynamic de game
- */
-function loserStyle() {
-    document.getElementById("user-box").style.border = "4px solid red";
-
-    document.getElementById("computer-box").style.border = "4px solid green";
 }
 
 /**
@@ -108,6 +91,7 @@ function gameCount(user, computer) {
     if (user && computer) {
         document.getElementById("games").innerText = ++gameNumber
     }
+   
 }
 /**
  * Function will change the chosen emoji from the user
