@@ -24,16 +24,16 @@ h2 {
   font-weight: 900;
   margin-top: 1em;
   margin-bottom: 1em;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .content-option {
-  background-color: rgb(211, 211, 211, 0.4);
+  background-color: rgb(211, 211, 211, 0.3);
   width: 1000px;
   max-width: 90%;
   padding: 1em 0.5em 3em;
@@ -55,7 +55,7 @@ h2 {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: lightgrey;
+  background-color: rgb(211, 211, 211, 0.3);
   padding: 2em 1em;
   width: 80vw;
   max-width: 500px;
@@ -65,7 +65,7 @@ h2 {
 }
 
 #final-message {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .decision {
@@ -78,7 +78,8 @@ h2 {
 }
 
 .btn-over {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   padding: 0.5em 1em;
   border-radius: 0.6em;
   border: none;
@@ -87,11 +88,13 @@ h2 {
 }
 
 .new-chance {
-  background-color: rgb(0, 128, 0);
+  background-color: rgb(0, 128, 0, 0.9);
+  transition: transform 200ms;
 }
 
 .exit {
-  background-color: red;
+  background-color: rgb(255, 0, 0, 0.9);
+  transition: transform 200ms;
 }
 
 #final-message {
@@ -101,6 +104,11 @@ h2 {
 
 .hidden {
   visibility: hidden;
+}
+
+.new-chance:hover,
+.exit:hover {
+  transform: scale(1.2);
 }
 
 /*buttons container: rock, paper, scissors*/
